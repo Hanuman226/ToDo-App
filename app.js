@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const cool = require('cool-ascii-faces');
 
 const app = express();
 
@@ -47,6 +48,7 @@ const listSchema = {
 
 const List = mongoose.model("List", listSchema);
 
+app.get('/cool', (req, res) => res.send(cool()));
 
 app.get("/", function (req, res) {
 
@@ -70,6 +72,8 @@ app.get("/", function (req, res) {
   });
 
 });
+
+
 
 app.get("/:customListName", function (req, res) {
   const customListName = _.capitalize(req.params.customListName);
