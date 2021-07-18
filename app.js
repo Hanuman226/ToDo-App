@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin:hanuman226@cluster0.zykun.mongodb.net/todolistDB?retryWrites=true&w=majority", {
+mongoose.connect(MongoDB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
